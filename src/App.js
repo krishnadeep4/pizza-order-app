@@ -1,6 +1,7 @@
 import Axios from "axios";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./routes";
+import { useSelector } from "react-redux";
 
 const RoutesComponent = ({token}) => {
   if (token) {
@@ -13,11 +14,11 @@ const RoutesComponent = ({token}) => {
 
 const App = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
-  console.log(baseUrl);
   Axios.defaults.baseURL = baseUrl;
+  const { token } = useSelector((state) => state.auth);
   return (
       <Router>
-        <RoutesComponent token={false} />
+        <RoutesComponent token={token} />
       </Router>
   );
 }

@@ -11,7 +11,7 @@ const SignUp=Loadable({ loader: () => import("../component/pages/SignUp"),
 loading: () => <h1>Loading...</h1>
 })
 
-const PublicRoutes ={
+const PublicRoutes = {
 element:<SignUpLayout/>,
 children:[
     {
@@ -29,4 +29,4 @@ children:[
 ]
 }
 
-export default PublicRoutes
+export default PublicRoutes;
