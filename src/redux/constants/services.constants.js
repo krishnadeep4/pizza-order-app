@@ -7,5 +7,6 @@ export const METHODS = {
 };
 
 export const SERVICE_ROUTES = {
-    USER_LOGIN : "/login"
+    USER_LOGIN : "/login",
+    USER_REGISTER : "/register"
 }

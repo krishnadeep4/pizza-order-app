@@ -2,12 +2,13 @@ export const ROUTE_NAME = {
   BASE: "/",
   LOGIN: "/login",
 
-  HOME: "/home",
-
+  ORDERS: "/orders",
+  CART: "/cart"
 }
 export const ROUTE_DEFINATION = {
     BASE: ROUTE_NAME.BASE,
     LOGIN: ROUTE_NAME.LOGIN,
 
-    HOME: ROUTE_NAME.HOME
+    ORDERS: ROUTE_NAME.ORDERS,
+    CART: ROUTE_NAME.CART
 }    

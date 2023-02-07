@@ -6,4 +6,5 @@ export const THUNK_STATUS = {
 
 export const ASYNC_ROUTES = {
     USER_LOGIN: "/login",
+    USER_REGISTER : "/register"
 }

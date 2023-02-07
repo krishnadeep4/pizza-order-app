@@ -10,9 +10,8 @@ export function UserLoginService(data) {
     };
     Axios.request(config)
       .then((response) => {
-        console.log("Response=============> ", response);
-        if(response.data.statusCode) {
-            throw new Error("Invalid Email");
+        if(response.data.statusCode != "201") {
+            throw new Error("Invalid Emil or Password");
         }
         return resolve(response);
       })

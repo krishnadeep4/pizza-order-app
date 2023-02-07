@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.993" height="16.787" viewBox="0 0 25.993 16.787">
+  <g id="speedometer" transform="translate(0)">
+    <path id="Path_192" data-name="Path 192" d="M25.993,14.621H20.578V13.538H24.91V13A11.914,11.914,0,1,0,1.083,13v.542H5.415v1.083H0V13a13,13,0,1,1,25.993,0Zm0,0" fill="#0c1559"/>
+    <path id="Path_193" data-name="Path 193" d="M245.332,10.668h1.083v3.249h-1.083Zm0,0" transform="translate(-232.877 -10.126)" fill="#0c1559"/>
+    <path id="Path_194" data-name="Path 194" d="M65.407,85.949l2.623,2.623-.766.766-2.623-2.623Zm0,0" transform="translate(-61.359 -81.586)" fill="#0c1559"/>
+    <path id="Path_195" data-name="Path 195" d="M383.252,85.965l.766.766-2.623,2.623-.766-.766Zm0,0" transform="translate(-361.305 -81.601)" fill="#0c1559"/>
+    <path id="Path_196" data-name="Path 196" d="M205.531,163.6a2.864,2.864,0,0,1-1.232-5.449l7.311-3.486-3.486,7.311A2.9,2.9,0,0,1,205.531,163.6Zm3.784-6.647-4.549,2.173a1.782,1.782,0,1,0,2.376,2.376Zm0,0" transform="translate(-192.379 -146.816)" fill="#0c1559"/>
+  </g>
+</svg>

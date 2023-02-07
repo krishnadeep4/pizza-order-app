@@ -3,8 +3,18 @@ import { Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import { ROUTE_DEFINATION } from "../utils/constants/route.constant";
 
-const Home = Loadable({
-  loader: () => import("../component/pages/Home"),
+const Store = Loadable({
+  loader: () => import("../component/pages/Store"),
+  loading: () => <h1>Loading...</h1>,
+});
+
+const Orders = Loadable({
+  loader: () => import("../component/pages/Orders"),
+  loading: () => <h1>Loading...</h1>,
+});
+
+const Cart = Loadable({
+  loader: () => import("../component/pages/Cart"),
   loading: () => <h1>Loading...</h1>,
 });
 
@@ -15,7 +25,17 @@ const PrivateRoutes = {
     {
       path: ROUTE_DEFINATION.BASE,
       title: ROUTE_DEFINATION.BASE,
-      element: <Home />,
+      element: <Store />,
+    },
+    {
+      path: ROUTE_DEFINATION.ORDERS,
+      title: ROUTE_DEFINATION.ORDERS,
+      element: <Orders />,
+    },
+    {
+      path: ROUTE_DEFINATION.CART,
+      title: ROUTE_DEFINATION.CART,
+      element: <Cart />,
     },
     {
       path: "*",

@@ -8,6 +8,7 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import "primereact/resources/themes/lara-light-indigo/theme.css";      
 import "primereact/resources/primereact.min.css";
+import { THUNK_STATUS } from "../../../redux/constants/redux.constants";
 import { userLoginAsync } from "../../../redux/asyncThunk/auth.asyncThunk";
 import { Toast } from "primereact/toast";
 
@@ -15,6 +16,7 @@ function Login() {
   const navigate = useNavigate();
   const toast = useRef(null);
   const dispatch = useDispatch();
+  const { userLoginStatus } = useSelector((state) => state.auth);
 
   const formik = useFormik({
     initialValues: {
@@ -25,8 +27,10 @@ function Login() {
       dispatch(userLoginAsync(values))
         .unwrap()
         .then((res) => {
-          console.log("DONEEEEEEEEEEEEE");
-          console.log(res);
+          toast.current.show({
+            severity: "success",
+            summary: "Successfully Logged In",
+          });
         })
         .catch((err) => {
           console.log(err);
@@ -90,7 +94,7 @@ function Login() {
         <br/>
         <div style = {{textAlign:"center"}}>
         <Button
-          //loading={userLoginStatus === THUNK_STATUS.LOADING}
+          loading={userLoginStatus === THUNK_STATUS.LOADING}
           type="submit"
           label="Login"
           className="p-button-lg"
