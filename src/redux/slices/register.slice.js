@@ -3,7 +3,7 @@ import { userRegisterAsync } from "../asyncThunk/register.asyncThunk";
 import { THUNK_STATUS } from "../constants/redux.constants";
 
 const initialState = {
-    userLoginStatus: null,
+  userRegisterStatus: null,
 };
 export const RegisterSlice = createSlice({
   name: "register",
@@ -11,13 +11,13 @@ export const RegisterSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(userRegisterAsync.pending, (state, action) => {
-      state.userLoginStatus = THUNK_STATUS.LOADING;
+      state.userRegisterStatus = THUNK_STATUS.LOADING;
     });
     builder.addCase(userRegisterAsync.fulfilled, (state, action) => {
-      state.userLoginStatus = THUNK_STATUS.SUCCESS;
+      state.userRegisterStatus = THUNK_STATUS.SUCCESS;
     });
     builder.addCase(userRegisterAsync.rejected, (state, action) => {
-      state.userLoginStatus = THUNK_STATUS.FAILED;
+      state.userRegisterStatus = THUNK_STATUS.FAILED;
     });
   },
 });

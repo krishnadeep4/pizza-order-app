@@ -10,11 +10,13 @@ import "primereact/resources/primereact.min.css";
 import { Toast } from "primereact/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { userRegisterAsync } from "../../../redux/asyncThunk/register.asyncThunk";
+import { THUNK_STATUS } from "../../../redux/constants/redux.constants";
 
 function SignUp() {
   const navigate = useNavigate();
   const toast = useRef(null);
   const dispatch = useDispatch();
+  const { userRegisterStatus } = useSelector((state) => state.register);
 
   const formik = useFormik({
     initialValues: {
@@ -113,7 +115,7 @@ function SignUp() {
           <br />
           <div style={{ textAlign: "center" }}>
             <Button
-              //loading={userLoginStatus === THUNK_STATUS.LOADING}
+              loading={userRegisterStatus === THUNK_STATUS.LOADING}
               type="submit"
               label="SignUp"
               className="p-button-lg"

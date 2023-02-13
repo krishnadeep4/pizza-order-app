@@ -1,9 +1,10 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideBar.css";
 import logo from "../../../assets/images/pizza-shop.png";
 import { ROUTE_DEFINATION } from "../../../utils/constants/route.constant";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { Badge } from "primereact/badge";
 import "react-pro-sidebar/dist/css/styles.css";
 import {
   Menu,
@@ -24,7 +25,9 @@ import {
   switchOut,
 } from "../../../assets/images";
 import { Button } from "primereact/button";
+import { useSelector } from "react-redux";
 const SideBar = ({ menuIconClick, menuCollapse }) => {
+  const { itemSize } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const location = useLocation();
   const pathName = location.pathname;
@@ -37,16 +40,16 @@ const SideBar = ({ menuIconClick, menuCollapse }) => {
               style={{
                 height: "unset",
                 width: "unset",
-                boxShadow: "none",
+                boxShadow: "none !important",
                 background: "none !important",
-                border: "none",
+                border: "none !important",
               }}
               className="p-button-rounded p-button-secondary toggleBtnOpen"
               icon={
                 <img
                   alt="img"
                   style={{
-                    width: "60px",
+                    width: "15px",
                   }}
                   src={leftArrow}
                 ></img>
@@ -55,12 +58,18 @@ const SideBar = ({ menuIconClick, menuCollapse }) => {
             />
           ) : (
             <Button
-              style={{ height: "unset", width: "unset" }}
+              style={{
+                height: "unset",
+                width: "unset",
+                boxShadow: "none !important",
+                background: "none !important",
+                border: "none !important",
+              }}
               icon={
                 <img
                   alt="img"
                   style={{
-                    width: "60px",
+                    width: "15px",
                   }}
                   src={rightArrow}
                 ></img>
@@ -156,6 +165,7 @@ const SideBar = ({ menuIconClick, menuCollapse }) => {
               </MenuItem>
 
               <MenuItem
+                //className="p-overlay-badge"
                 active={pathName.includes(ROUTE_DEFINATION.CART)}
                 onClick={() => navigate(ROUTE_DEFINATION.CART)}
                 icon={
@@ -179,7 +189,7 @@ const SideBar = ({ menuIconClick, menuCollapse }) => {
                       : "black",
                   }}
                 >
-                  Cart
+                  Cart &nbsp;&nbsp;&nbsp;&nbsp;<Badge value={itemSize}></Badge>
                 </p>
               </MenuItem>
             </Menu>
