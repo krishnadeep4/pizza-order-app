@@ -18,6 +18,11 @@ const Cart = Loadable({
   loading: () => <h1>Loading...</h1>,
 });
 
+const PizzaCart = Loadable({
+  loader: () => import("../component/pages/Cart/cart"),
+  loading: () => <h1>Loading...</h1>,
+});
+
 const PrivateRoutes = {
   // path:ROUTE_DEFINATION.BASE,
   element: <MainLayout />,
@@ -35,11 +40,11 @@ const PrivateRoutes = {
     {
       path: ROUTE_DEFINATION.CART,
       title: ROUTE_DEFINATION.CART,
-      element: <Cart />,
+      element: <PizzaCart />,
     },
     {
       path: "*",
-      element: <Navigate to={ROUTE_DEFINATION.BASE}/>,
+      element: <Navigate to={ROUTE_DEFINATION.BASE} />,
     },
   ],
 };

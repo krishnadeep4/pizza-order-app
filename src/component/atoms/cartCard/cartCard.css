@@ -1,0 +1,61 @@
+.productCard {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	position: relative;
+  }
+  
+  .removeButton {
+	position : absolute;
+	top : 0;
+
+  }
+
+  .productImage {
+	width: 150px;
+	height: 150px;
+	margin-right: 10px;
+  }
+  
+  .productInfo {
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+  }
+  
+  .productName {
+	margin: 0;
+  }
+  
+  .productDescription {
+	margin: 10px 0;
+  }
+  
+  .productActions {
+	position: relative;
+	flex: 1;
+	display: flex;
+	justify-content: end;
+	flex-direction: row;
+	align-items: center;
+  }
+  
+  .quantityLabel {
+	margin-right: 10px;
+  }
+  
+  .quantityInput {
+	width: 50px;
+	margin-right: 10px;
+  }
+  
+  .addToCartButton {
+	background-color: #000000;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+  }

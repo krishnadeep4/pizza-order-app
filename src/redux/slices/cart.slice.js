@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [],
+  items: {},
   itemSize: 0,
 };
 
@@ -10,8 +10,13 @@ export const CartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.items = [...state.items, action.payload];
-      state.itemSize = state.itemSize + 1;
+      const newKey = action.payload;
+      if (newKey in state.items) {
+        state.items[newKey] = state.items[newKey] + 1;
+      } else {
+        state.items[newKey] = 1;
+        state.itemSize = state.itemSize + 1;
+      }
     },
     deleteItems: (state) => {
       state.items = [];
